@@ -1,0 +1,992 @@
+  [1m[35m (355.9ms)[0m  [1m[35mCREATE DATABASE "cat_tinder_development" ENCODING = 'unicode'[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (236.5ms)[0m  [1m[35mCREATE DATABASE "cat_tinder_test" ENCODING = 'unicode'[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (31.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (26.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4614737587158247395)[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateCats (20190605203656)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE "cats" ("id" bigserial primary key, "name" character varying, "age" integer, "enjoys" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190605203656_create_cats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190605203656"]]
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-06-05 20:40:19.782884"], ["updated_at", "2019-06-05 20:40:19.782884"]]
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4614737587158247395)[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCat Create (0.6ms)[0m  [1m[32mINSERT INTO "cats" ("name", "age", "enjoys", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nibbles"], ["age", 10], ["enjoys", "walking"], ["created_at", "2019-06-05 21:38:54.066430"], ["updated_at", "2019-06-05 21:38:54.066430"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 12.46.197.135 at 2019-06-05 21:43:07 +0000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (9.6ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 12.46.197.135 at 2019-06-05 21:43:10 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 12.46.197.135 at 2019-06-05 21:43:11 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 12.46.197.135 at 2019-06-05 21:43:58 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (1.9ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Started GET "/" for 12.46.197.135 at 2019-06-05 23:27:42 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 12.46.197.135 at 2019-06-05 23:27:49 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (1.8ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 108.221.223.118 at 2019-06-06 03:55:51 +0000
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 108.221.223.118 at 2019-06-06 03:55:51 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/cats/" for 108.221.223.118 at 2019-06-06 03:55:59 +0000
+Processing by CatsController#index as HTML
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 12ms (Views: 7.0ms | ActiveRecord: 3.9ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mCat Create (1.7ms)[0m  [1m[32mINSERT INTO "cats" ("name", "age", "enjoys", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Catrina"], ["age", 2], ["enjoys", "Ribs"], ["created_at", "2019-06-06 03:59:23.568212"], ["updated_at", "2019-06-06 03:59:23.568212"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mCat Create (0.2ms)[0m  [1m[32mINSERT INTO "cats" ("name", "age", "enjoys", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Felicity"], ["age", 10], ["enjoys", "Billie Eilish jams"], ["created_at", "2019-06-06 03:59:23.571899"], ["updated_at", "2019-06-06 03:59:23.571899"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+Started GET "/cats/" for 108.221.223.118 at 2019-06-06 04:00:18 +0000
+Processing by CatsController#index as HTML
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 108.221.223.118 at 2019-06-06 04:02:14 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats/" for 108.221.223.118 at 2019-06-06 04:29:38 +0000
+Processing by CatsController#index as HTML
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 12ms (Views: 6.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for 12.46.197.135 at 2019-06-06 16:26:30 +0000
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-06 16:26:37 +0000
+Processing by CatsController#index as HTML
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 15ms (Views: 7.3ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/" for 12.46.197.135 at 2019-06-06 16:26:43 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 12.46.197.135 at 2019-06-06 18:00:40 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 12.46.197.135 at 2019-06-06 18:00:44 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 12.46.197.135 at 2019-06-06 18:31:32 +0000
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as */*
+  Parameters: {"common_name"=>"sperm whale", "latin_name"=>"Balaenoptera musculus", "mammal"=>"whale", "welcome"=>{"common_name"=>"sperm whale", "latin_name"=>"Balaenoptera musculus", "mammal"=>"whale"}}
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 13ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-06 18:32:22 +0000
+Processing by CatsController#index as */*
+  Parameters: {"common_name"=>"sperm whale", "latin_name"=>"Balaenoptera musculus", "mammal"=>"whale", "cat"=>{}}
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/cats" for 12.46.197.135 at 2019-06-06 18:35:00 +0000
+Processing by CatsController#create as */*
+  Parameters: {"name"=>"chatty", "age"=>"10", "enjoys"=>"whale watching", "cat"=>{"name"=>"chatty", "age"=>"10", "enjoys"=>"whale watching"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[36mCat Create (5.5ms)[0m  [1m[32mINSERT INTO "cats" ("name", "age", "enjoys", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "chatty"], ["age", 10], ["enjoys", "whale watching"], ["created_at", "2019-06-06 18:35:00.941653"], ["updated_at", "2019-06-06 18:35:00.941653"]]
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cats_controller.rb:8
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-06 18:35:42 +0000
+Processing by CatsController#index as */*
+  Parameters: {"name"=>"chatty", "age"=>"10", "enjoys"=>"whale watching", "cat"=>{"name"=>"chatty", "age"=>"10", "enjoys"=>"whale watching"}}
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-06 18:45:25 +0000
+Processing by CatsController#index as */*
+  Parameters: {"name"=>"chatty", "age"=>"10", "enjoys"=>"whale watching", "cat"=>{"name"=>"chatty", "age"=>"10", "enjoys"=>"whale watching"}}
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-06 21:35:11 +0000
+Processing by CatsController#index as */*
+  Parameters: {"name"=>"catsy", "age"=>"20", "enjoys"=>"singing show tunes", "cat"=>{"name"=>"catsy", "age"=>"20", "enjoys"=>"singing show tunes"}}
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/cats" for 12.46.197.135 at 2019-06-06 21:35:25 +0000
+Processing by CatsController#create as */*
+  Parameters: {"name"=>"catsy", "age"=>"20", "enjoys"=>"singing show tunes", "cat"=>{"name"=>"catsy", "age"=>"20", "enjoys"=>"singing show tunes"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[36mCat Create (1.1ms)[0m  [1m[32mINSERT INTO "cats" ("name", "age", "enjoys", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "catsy"], ["age", 20], ["enjoys", "singing show tunes"], ["created_at", "2019-06-06 21:35:25.235120"], ["updated_at", "2019-06-06 21:35:25.235120"]]
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cats_controller.rb:8
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-06 21:35:31 +0000
+Processing by CatsController#index as */*
+  Parameters: {"name"=>"catsy", "age"=>"20", "enjoys"=>"singing show tunes", "cat"=>{"name"=>"catsy", "age"=>"20", "enjoys"=>"singing show tunes"}}
+  [1m[36mCat Load (1.7ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/cats" for 108.221.223.118 at 2019-06-07 02:51:26 +0000
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as */*
+  Parameters: {"name"=>"catsy", "age"=>"20", "enjoys"=>"singing show tunes", "cat"=>{"name"=>"catsy", "age"=>"20", "enjoys"=>"singing show tunes"}}
+  [1m[36mCat Load (1.1ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 03:17:03 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (9.0ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 150ms (Views: 87.5ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 03:19:23 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 03:19:46 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 03:21:18 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 03:21:40 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 03:36:24 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 03:37:57 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 03:38:34 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 03:39:19 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 03:40:09 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 03:46:02 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 03:46:26 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 03:50:03 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 03:50:22 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 03:50:32 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 03:55:15 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 03:59:14 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 04:00:25 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 04:00:52 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 04:04:04 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 04:04:15 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 04:04:21 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 04:10:53 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 04:13:09 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 04:15:25 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 18.221.136.58 at 2019-06-07 04:17:14 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 12.46.197.135 at 2019-06-07 17:36:41 +0000
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as */*
+  Parameters: {"name"=>"catsy", "age"=>"20", "enjoys"=>"singing show tunes", "welcome"=>{"name"=>"catsy", "age"=>"20", "enjoys"=>"singing show tunes"}}
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 17ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 17:36:54 +0000
+Processing by CatsController#index as */*
+  Parameters: {"name"=>"catsy", "age"=>"20", "enjoys"=>"singing show tunes", "cat"=>{"name"=>"catsy", "age"=>"20", "enjoys"=>"singing show tunes"}}
+  [1m[36mCat Load (1.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 16ms (Views: 10.7ms | ActiveRecord: 14.2ms)
+
+
+Started POST "/cats" for 12.46.197.135 at 2019-06-07 17:45:04 +0000
+Processing by CatsController#create as */*
+  Parameters: {"name"=>"catryy", "age"=>"10", "enjoys"=>"singing show tunes", "cat"=>{"name"=>"catryy", "age"=>"10", "enjoys"=>"singing show tunes"}}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[36mCat Create (2.4ms)[0m  [1m[32mINSERT INTO "cats" ("name", "age", "enjoys", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "catryy"], ["age", 10], ["enjoys", "singing show tunes"], ["created_at", "2019-06-07 17:45:04.311295"], ["updated_at", "2019-06-07 17:45:04.311295"]]
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cats_controller.rb:8
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 18:30:44 +0000
+Processing by CatsController#index as */*
+  Parameters: {"name"=>"catryy", "age"=>"10", "enjoys"=>"singing show tunes", "cat"=>{"name"=>"catryy", "age"=>"10", "enjoys"=>"singing show tunes"}}
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 47ms (Views: 16.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 18:42:36 +0000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 21ms (Views: 11.4ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 18:42:56 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 18:43:54 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 18:46:25 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 18:46:32 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 18:47:13 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 18:47:32 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 18:48:51 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/cats" for 12.46.197.135 at 2019-06-07 18:57:58 +0000
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#create as */*
+  Parameters: {"name"=>"Catrina", "age"=>"4", "enjoys"=>"walking on the beach", "cat"=>{"name"=>"Catrina", "age"=>"4", "enjoys"=>"walking on the beach"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[36mCat Create (2.6ms)[0m  [1m[32mINSERT INTO "cats" ("name", "age", "enjoys", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Catrina"], ["age", 4], ["enjoys", "walking on the beach"], ["created_at", "2019-06-07 18:57:59.068413"], ["updated_at", "2019-06-07 18:57:59.068413"]]
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cats_controller.rb:8
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/" for 209.17.96.26 at 2019-06-07 19:05:47 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 13ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 20:00:48 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 21:22:46 +0000
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as */*
+  [1m[36mCat Load (9.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 30ms (Views: 11.6ms | ActiveRecord: 15.5ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 21:22:56 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/cats" for 12.46.197.135 at 2019-06-07 21:23:16 +0000
+Processing by CatsController#create as */*
+  Parameters: {"name"=>"Catalina", "age"=>"7", "enjoys"=>"the catalina wine mixer", "cat"=>{"name"=>"Catalina", "age"=>"7", "enjoys"=>"the catalina wine mixer"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[36mCat Create (3.1ms)[0m  [1m[32mINSERT INTO "cats" ("name", "age", "enjoys", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Catalina"], ["age", 7], ["enjoys", "the catalina wine mixer"], ["created_at", "2019-06-07 21:23:16.937370"], ["updated_at", "2019-06-07 21:23:16.937370"]]
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cats_controller.rb:8
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/cats" for 12.46.197.135 at 2019-06-07 21:23:22 +0000
+Processing by CatsController#create as */*
+  Parameters: {"name"=>"Catalina", "age"=>"7", "enjoys"=>"the catalina wine mixer", "cat"=>{"name"=>"Catalina", "age"=>"7", "enjoys"=>"the catalina wine mixer"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[36mCat Create (0.3ms)[0m  [1m[32mINSERT INTO "cats" ("name", "age", "enjoys", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Catalina"], ["age", 7], ["enjoys", "the catalina wine mixer"], ["created_at", "2019-06-07 21:23:22.934067"], ["updated_at", "2019-06-07 21:23:22.934067"]]
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cats_controller.rb:8
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/cats" for 12.46.197.135 at 2019-06-07 21:24:03 +0000
+Processing by CatsController#create as */*
+  Parameters: {"name"=>"Catalina", "age"=>"7", "enjoys"=>"the catalina wine mixer", "cat"=>{"name"=>"Catalina", "age"=>"7", "enjoys"=>"the catalina wine mixer"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[36mCat Create (10.1ms)[0m  [1m[32mINSERT INTO "cats" ("name", "age", "enjoys", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Catalina"], ["age", 7], ["enjoys", "the catalina wine mixer"], ["created_at", "2019-06-07 21:24:03.853824"], ["updated_at", "2019-06-07 21:24:03.853824"]]
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cats_controller.rb:8
+Completed 200 OK in 25ms (Views: 8.2ms | ActiveRecord: 11.2ms)
+
+
+Started POST "/cats" for 12.46.197.135 at 2019-06-07 21:24:05 +0000
+Processing by CatsController#create as */*
+  Parameters: {"name"=>"Catalina", "age"=>"7", "enjoys"=>"the catalina wine mixer", "cat"=>{"name"=>"Catalina", "age"=>"7", "enjoys"=>"the catalina wine mixer"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[36mCat Create (0.6ms)[0m  [1m[32mINSERT INTO "cats" ("name", "age", "enjoys", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Catalina"], ["age", 7], ["enjoys", "the catalina wine mixer"], ["created_at", "2019-06-07 21:24:05.619656"], ["updated_at", "2019-06-07 21:24:05.619656"]]
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cats_controller.rb:8
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/cats" for 12.46.197.135 at 2019-06-07 21:24:07 +0000
+Processing by CatsController#create as */*
+  Parameters: {"name"=>"Catalina", "age"=>"7", "enjoys"=>"the catalina wine mixer", "cat"=>{"name"=>"Catalina", "age"=>"7", "enjoys"=>"the catalina wine mixer"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[36mCat Create (0.5ms)[0m  [1m[32mINSERT INTO "cats" ("name", "age", "enjoys", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Catalina"], ["age", 7], ["enjoys", "the catalina wine mixer"], ["created_at", "2019-06-07 21:24:07.205966"], ["updated_at", "2019-06-07 21:24:07.205966"]]
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cats_controller.rb:8
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/cats" for 12.46.197.135 at 2019-06-07 21:24:09 +0000
+Processing by CatsController#create as */*
+  Parameters: {"name"=>"Catalina", "age"=>"7", "enjoys"=>"the catalina wine mixer", "cat"=>{"name"=>"Catalina", "age"=>"7", "enjoys"=>"the catalina wine mixer"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[36mCat Create (0.7ms)[0m  [1m[32mINSERT INTO "cats" ("name", "age", "enjoys", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Catalina"], ["age", 7], ["enjoys", "the catalina wine mixer"], ["created_at", "2019-06-07 21:24:09.301341"], ["updated_at", "2019-06-07 21:24:09.301341"]]
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cats_controller.rb:8
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 21:25:23 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 21:26:33 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 21:26:33 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 21:26:33 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/cats" for 12.46.197.135 at 2019-06-07 21:26:48 +0000
+Processing by CatsController#create as */*
+  Parameters: {"name"=>"Catrinana", "age"=>"6", "enjoys"=>"surfing ", "cat"=>{"name"=>"Catrinana", "age"=>"6", "enjoys"=>"surfing "}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/cats_controller.rb:8
+Completed 422 Unprocessable Entity in 35ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 21:26:48 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 21:26:54 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 21:30:04 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 21:30:04 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 21:30:04 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/cats" for 12.46.197.135 at 2019-06-07 21:30:25 +0000
+Processing by CatsController#create as */*
+  Parameters: {"name"=>"Catrinana", "age"=>"6", "enjoys"=>"surfing ", "cat"=>{"name"=>"Catrinana", "age"=>"6", "enjoys"=>"surfing "}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/cats_controller.rb:8
+Completed 422 Unprocessable Entity in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 21:30:34 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/cats" for 12.46.197.135 at 2019-06-07 21:31:24 +0000
+Processing by CatsController#create as */*
+  Parameters: {"name"=>"Catrinana", "age"=>"6", "enjoys"=>"surfing and dancing", "cat"=>{"name"=>"Catrinana", "age"=>"6", "enjoys"=>"surfing and dancing"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[36mCat Create (0.3ms)[0m  [1m[32mINSERT INTO "cats" ("name", "age", "enjoys", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Catrinana"], ["age", 6], ["enjoys", "surfing and dancing"], ["created_at", "2019-06-07 21:31:24.033270"], ["updated_at", "2019-06-07 21:31:24.033270"]]
+  ↳ app/controllers/cats_controller.rb:8
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cats_controller.rb:8
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-07 21:31:32 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4614737587158247395)[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateActiveStorageTables (20190607222605)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (33.6ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190607222605_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/migrate/20190607222605_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (31.6ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  ↳ db/migrate/20190607222605_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/migrate/20190607222605_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/migrate/20190607222605_create_active_storage_tables.active_storage.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190607222605"]]
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(4614737587158247395)[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 16:58:21 +0000
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 30ms (Views: 15.8ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 17:10:09 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 17:11:44 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 17:12:48 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 17:14:59 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 17:15:20 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 13ms (Views: 13.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 17:17:05 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 49ms (Views: 48.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 17:23:04 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 17:23:31 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 17:26:51 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 17:31:18 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 17:34:42 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 17:35:13 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 17:37:10 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 17:47:11 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 17:48:01 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 17:50:12 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 17:50:50 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 18:00:02 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 18:00:34 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 12.46.197.135 at 2019-06-10 18:01:33 +0000
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 108.221.223.118 at 2019-07-05 23:58:15 +0000
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:4
+Completed 200 OK in 27ms (Views: 13.3ms | ActiveRecord: 5.8ms)
+
+
